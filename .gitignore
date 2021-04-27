@@ -1,2 +1,6 @@
 *.zip
+<<<<<<< HEAD
 Textfiles zip/
+=======
+train/
+>>>>>>> ca65e2ca (added ztest files)

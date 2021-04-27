@@ -3,9 +3,15 @@ from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 import os
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> origin
+=======
+=======
+
+>>>>>>> 52ff7fc5 (Added training files and directory in train.py with cuda varialble changed)
+>>>>>>> ca65e2ca (added ztest files)
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 sz = 128
 # Step 1 - Building the CNN
