@@ -1,7 +1,11 @@
 # Importing the Keras libraries and packages
-from tensorflow.keras import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
+from keras.models import Sequential
+from keras.layers import Convolution2D
+from keras.layers import MaxPooling2D
+from keras.layers import Flatten
+from keras.layers import Dense , Dropout
 import os
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -12,6 +16,8 @@ import os
 
 >>>>>>> 52ff7fc5 (Added training files and directory in train.py with cuda varialble changed)
 >>>>>>> ca65e2ca (added ztest files)
+=======
+>>>>>>> 49b2316a (added few missing lib to work with train files)
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 sz = 128
 # Step 1 - Building the CNN
@@ -20,10 +26,10 @@ sz = 128
 classifier = Sequential()
 
 # First convolution layer and pooling
-classifier.add(Conv2D(32, (3, 3), input_shape=(sz, sz, 1, 0), activation='relu'))
+classifier.add(Convolution2D(32, (3, 3), input_shape=(sz, sz, 1), activation='relu'))
 classifier.add(MaxPooling2D(pool_size=(2, 2)))
 # Second convolution layer and pooling
-classifier.add(Conv2D(32, (3, 3), activation='relu'))
+classifier.add(Convolution2D(32, (3, 3), activation='relu'))
 # input_shape is going to be the pooled feature maps from the previous convolution layer
 classifier.add(MaxPooling2D(pool_size=(2, 2)))
 #classifier.add(Convolution2D(32, (3, 3), activation='relu'))
@@ -48,7 +54,7 @@ classifier.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['
 # Step 2 - Preparing the train/test data and training the model
 classifier.summary()
 # Code copied from - https://keras.io/preprocessing/image/
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from keras.preprocessing.image import ImageDataGenerator
 
 train_datagen = ImageDataGenerator(
         rescale=1./255,
@@ -84,4 +90,3 @@ with open("model-bw.json", "w") as json_file:
 print('Model Saved')
 classifier.save_weights('model-bw.h5')
 print('Weights saved')
-

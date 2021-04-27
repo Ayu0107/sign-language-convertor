@@ -1,6 +1,11 @@
 *.zip
 <<<<<<< HEAD
+<<<<<<< HEAD
 Textfiles zip/
 =======
 train/
 >>>>>>> ca65e2ca (added ztest files)
+=======
+Textfiles zip/
+pictures/
+>>>>>>> 49b2316a (added few missing lib to work with train files)
