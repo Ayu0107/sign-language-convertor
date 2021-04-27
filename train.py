@@ -5,7 +5,8 @@ from keras.layers import MaxPooling2D
 from keras.layers import Flatten
 from keras.layers import Dense , Dropout
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 sz = 128
 # Step 1 - Building the CNN
 
@@ -57,7 +58,7 @@ training_set = train_datagen.flow_from_directory('data2/train',
                                                  color_mode='grayscale',
                                                  class_mode='categorical')
 
-test_set = test_datagen.flow_from_directory('data2/test',
+test_set = test_datagen.flow_from_directory('data2/ztest',
                                             target_size=(sz , sz),
                                             batch_size=10,
                                             color_mode='grayscale',
