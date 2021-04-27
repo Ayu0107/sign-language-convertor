@@ -3,7 +3,7 @@ import tkinter as tk
 import cv2
 import os
 import numpy as np
-from keras.models import model_from_json
+from tensorflow.keras.models import model_from_json
 import operator
 import time
 import sys
