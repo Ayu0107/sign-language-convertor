@@ -160,7 +160,7 @@ while True:
     if interrupt & 0xFF == 27: # esc key
         break
     if interrupt & 0xFF == ord('0'):
-        cv2.imwrite(directory+'0/'+str(count['zero'])+'.jpg', roi)
+        cv2.imwrite(directory+'/0/'+str(count['zero'])+'.jpg', roi)
     # if interrupt & 0xFF == ord('1'):
     #     cv2.imwrite(directory+'1/'+str(count['one'])+'.jpg', roi)
     # if interrupt & 0xFF == ord('2'):

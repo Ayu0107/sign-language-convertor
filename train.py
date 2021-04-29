@@ -7,7 +7,7 @@ from tensorflow.keras.layers import Dense , Dropout
 import os
 
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 sz = 128
 # Step 1 - Building the CNN
 
@@ -86,7 +86,7 @@ from tensorflow.keras.layers import Flatten
 from tensorflow.keras.layers import Dense , Dropout
 import os
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 sz = 128
 # Step 1 - Building the CNN
 
@@ -124,11 +124,7 @@ classifier.summary()
 # Code copied from - https://keras.io/preprocessing/image/
 from keras.preprocessing.image import ImageDataGenerator
 
-train_datagen = ImageDataGenerator(
-        rescale=1./255,
-        shear_range=0.2,
-        zoom_range=0.2,
-        horizontal_flip=True)
+train_datagen = ImageDataGenerator(rescale=1./255,shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
 
 test_datagen = ImageDataGenerator(rescale=1./255)
 
