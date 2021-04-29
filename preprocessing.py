@@ -7,7 +7,7 @@ if not os.path.exists("data2"):
     os.makedirs("data2")
 if not os.path.exists("data2/train"):
     os.makedirs("dataluv/train")
-if not os.path.exists("data2/test"):
+if not os.path.exists("data2/ztest"):
     os.makedirs("data2/test")
 path="train"
 path1 = "data2"
@@ -31,8 +31,8 @@ for (dirpath,dirnames,filenames) in os.walk(path):
         for(direcpath,direcnames,files) in os.walk(path+"/"+dirname):
        	    if not os.path.exists(path1+"/train/"+dirname):
                 os.makedirs(path1+"/train/"+dirname)
-            if not os.path.exists(path1+"/test/"+dirname):
-                os.makedirs(path1+"/test/"+dirname)
+            if not os.path.exists(path1+"/ztest/"+dirname):
+                os.makedirs(path1+"/ztest/"+dirname)
             # num=0.75*len(files)
             num = 100000000000000000
             i=0

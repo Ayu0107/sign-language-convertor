@@ -55,13 +55,13 @@ test_datagen = ImageDataGenerator(rescale=1./255)
 
 training_set = train_datagen.flow_from_directory('data2/train',
                                                  target_size=(sz, sz),
-                                                 batch_size=10,
+                                                 batch_size=1,
                                                  color_mode='grayscale',
                                                  class_mode='categorical')
 
 test_set = test_datagen.flow_from_directory('data2/ztest',
                                             target_size=(sz , sz),
-                                            batch_size=10,
+                                            batch_size=1,
                                             color_mode='grayscale',
                                             class_mode='categorical') 
 classifier.fit_generator(
@@ -134,13 +134,13 @@ test_datagen = ImageDataGenerator(rescale=1./255)
 
 training_set = train_datagen.flow_from_directory('data2/train',
                                                  target_size=(sz, sz),
-                                                 batch_size=10,
+                                                 batch_size=1,
                                                  color_mode='grayscale',
                                                  class_mode='categorical')
 
 test_set = test_datagen.flow_from_directory('data2/ztest',
                                             target_size=(sz , sz),
-                                            batch_size=10,
+                                            batch_size=1,
                                             color_mode='grayscale',
                                             class_mode='categorical') 
 classifier.fit_generator(
