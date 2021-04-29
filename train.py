@@ -6,6 +6,7 @@ from tensorflow.keras.layers import Flatten
 from tensorflow.keras.layers import Dense , Dropout
 import os
 
+
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 sz = 128
 # Step 1 - Building the CNN

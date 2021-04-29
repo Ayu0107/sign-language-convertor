@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 import hunspell
 from string import ascii_uppercase
 
+
 class Application:
     def __init__(self):
         self.directory = 'model'
