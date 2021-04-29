@@ -7,7 +7,7 @@ from tensorflow.keras.layers import Dense , Dropout
 import os
 
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 sz = 128
 # Step 1 - Building the CNN
 
@@ -53,23 +53,12 @@ train_datagen = ImageDataGenerator(
 
 test_datagen = ImageDataGenerator(rescale=1./255)
 
-training_set = train_datagen.flow_from_directory('data2/train',
-                                                 target_size=(sz, sz),
-                                                 batch_size=10,
-                                                 color_mode='grayscale',
-                                                 class_mode='categorical')
+training_set = train_datagen.flow_from_directory('data2/train',target_size=(sz, sz),batch_size=10,color_mode='grayscale',class_mode='categorical')
 
-test_set = test_datagen.flow_from_directory('data2/ztest',
-                                            target_size=(sz , sz),
-                                            batch_size=10,
-                                            color_mode='grayscale',
-                                            class_mode='categorical') 
-classifier.fit_generator(
-        training_set,
-        steps_per_epoch=12841, # No of images in training set
-        epochs=5,
-        validation_data=test_set,
-        validation_steps=4268)# No of images in test set
+test_set = test_datagen.flow_from_directory('data2/ztest',target_size=(sz , sz),batch_size=10,color_mode='grayscale',class_mode='categorical') 
+classifier.fit_generator(training_set,steps_per_epoch=12841, epochs=5, validation_data=test_set,validation_steps=4268)
+# No of images in the train set steps per epoch
+# No of images in test set validation set
 
 
 # Saving the model
@@ -86,7 +75,7 @@ from tensorflow.keras.layers import Flatten
 from tensorflow.keras.layers import Dense , Dropout
 import os
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 sz = 128
 # Step 1 - Building the CNN
 
@@ -124,28 +113,16 @@ classifier.summary()
 # Code copied from - https://keras.io/preprocessing/image/
 from keras.preprocessing.image import ImageDataGenerator
 
-train_datagen = ImageDataGenerator(
-        rescale=1./255,
-        shear_range=0.2,
-        zoom_range=0.2,
-        horizontal_flip=True)
+train_datagen = ImageDataGenerator(rescale=1./255,shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
 
 test_datagen = ImageDataGenerator(rescale=1./255)
 
-training_set = train_datagen.flow_from_directory('data2/train',
-                                                 target_size=(sz, sz),
-                                                 batch_size=10,
-                                                 color_mode='grayscale',
-                                                 class_mode='categorical')
+training_set = train_datagen.flow_from_directory('data2/train',target_size=(sz, sz),batch_size=1,color_mode='grayscale',class_mode='categorical')
 
-test_set = test_datagen.flow_from_directory('data2/ztest',
-                                            target_size=(sz , sz),
-                                            batch_size=10,
-                                            color_mode='grayscale',
-                                            class_mode='categorical') 
+test_set = test_datagen.flow_from_directory('data2/ztest',target_size=(sz , sz),batch_size=1,color_mode='grayscale',class_mode='categorical') 
 classifier.fit_generator(
         training_set,
-        steps_per_epoch=12841, # No of images in training set
+        steps_per_epoch=12845, # No of images in training set
         epochs=5,
         validation_data=test_set,
         validation_steps=4268)# No of images in test set
