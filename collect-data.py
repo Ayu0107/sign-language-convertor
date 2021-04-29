@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import os
 import string
+
 # Create the directory structure
 if not os.path.exists("data2"):
     os.makedirs("data2")
