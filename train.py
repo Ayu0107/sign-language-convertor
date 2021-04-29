@@ -6,6 +6,9 @@ from keras.layers import Flatten
 from keras.layers import Dense , Dropout
 import os
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -18,6 +21,7 @@ import os
 >>>>>>> ca65e2ca (added ztest files)
 =======
 >>>>>>> 49b2316a (added few missing lib to work with train files)
+>>>>>>> 03ffd3ac0810032d481c653927aac0172e8e349f
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 sz = 128
 # Step 1 - Building the CNN
